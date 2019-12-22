@@ -1,0 +1,23 @@
+kind: Pod
+apiVersion: v1
+metadata:
+  name: studjob-app
+  labels:
+    app: studjob
+spec:
+  containers:
+    - name: studjob-app
+      image: jantwisted/studjobportal-zeta:0.0.4
+      
+
+---
+
+kind: Service
+apiVersion: v1
+metadata:
+  name: studjob-service
+spec:
+  selector:
+    app: studjob
+  ports:
+    - port: 1588

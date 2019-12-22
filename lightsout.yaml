@@ -1,0 +1,23 @@
+kind: Pod
+apiVersion: v1
+metadata:
+  name: lightsout-app
+  labels:
+    app: lightsout
+spec:
+  containers:
+    - name: lightsout-app
+      image: jantwisted/lightsout-zeta:0.0.5
+      
+
+---
+
+kind: Service
+apiVersion: v1
+metadata:
+  name: lightsout-service
+spec:
+  selector:
+    app: lightsout
+  ports:
+    - port: 80
